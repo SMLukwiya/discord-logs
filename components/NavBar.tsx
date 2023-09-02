@@ -73,7 +73,7 @@ const NavBar = () => {
                 <UncontrolledDropdown nav inNavbar data-testid="navbar-menu-desktop">
                   <DropdownToggle nav caret id="profileDropDown">
                     <img
-                      src={user.picture}
+                      src={user.picture as any}
                       alt="Profile"
                       className="nav-user-profile rounded-circle"
                       width="50"
