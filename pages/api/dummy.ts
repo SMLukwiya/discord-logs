@@ -83,7 +83,7 @@ export default async function handler(req: Request, res: Response) {
     try {
       await sendToDiscord(allMessages);
     } catch (e) {
-      res.json({ error: e });
+      return res.json({ error: e });
     }
     return res.json({ message: 'Sent to discord' });
   } else {
