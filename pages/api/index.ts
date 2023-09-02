@@ -75,7 +75,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let allMessages = '';
 
     errorLogs.map((message: Auth0LogPayload) => {
-      const error_link = `https://manage.auth0.com/dashboard/us/${process.env.AUTH0_DOMAIN}/logs/${message.log_id}?page=1`;
+      const error_link = `https://manage.auth0.com/dashboard/us/${process.env.AUTH0_DOMAIN}/logs/${message.log_id}`;
       allMessages += `Auth0 Log:\nError Type: ${errorTypes[message.data.type] ?? message.data.type}\nUser email: ${
         message.data.user_name
       }\nError Link: ${error_link}\n\n`;
