@@ -1,4 +1,3 @@
-// import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 
 type Auth0LogPayload = {
@@ -41,7 +40,7 @@ export async function POST(req: Request) {
 
     const error_link = `https://manage.auth0.com/dashboard/us/${process.env.AUTH0_DOMAIN}/logs/${log_id}?page=1`;
 
-    const message = `Auth0 Log:\nError Type: ${data.type}\nDescription: ${data.user_name}\nError Link: ${error_link}`;
+    const message = `Auth0 Log:\nError Type: ${data.type}\nUser Email: ${data.user_name}\nError Link: ${error_link}`;
 
     // Forward the log details to the Discord channel
     try {
@@ -49,10 +48,8 @@ export async function POST(req: Request) {
     } catch (e) {
       return NextResponse.json({ error: e });
     }
-    // Respond
     NextResponse.json({ message: 'Log forwarded to Discord' });
   } else {
     return NextResponse.json({ error: 'Method not allowed' }, { status: 405 }); // Method Not Allowed
   }
-  return NextResponse.json({ message: 'Message' });
 }
