@@ -17,7 +17,7 @@ type Auth0LogPayload = {
 };
 
 const errorTypes = {
-  f: 'Failed Logi',
+  f: 'Failed Login',
   fapi: 'Operation on API failed',
   fce: 'Failed Change Email',
   fco: 'Failed by CORS',
