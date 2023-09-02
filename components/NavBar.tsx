@@ -119,7 +119,7 @@ const NavBar = () => {
                 <NavItem>
                   <span className="user-info">
                     <img
-                      src={user.picture}
+                      src={user.picture as any}
                       alt="Profile"
                       className="nav-user-profile d-inline-block rounded-circle mr-3"
                       width="50"
