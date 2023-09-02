@@ -51,8 +51,7 @@ const errorTypes = {
   fvr: 'Failed Verification Email Request'
 };
 
-const DISCORD_WEBHOOK_URL =
-  'https://discord.com/api/webhooks/1147222511201824898/PRLd3CpMNqDnJ8xzbq3No6Pbnl2epL5GPA1yQqp76S9WvOECtBA7vZH99EJ9PEqIRVBk';
+const DISCORD_WEBHOOK_URL = ''; // your discord webhook
 
 async function sendToDiscord(message: string) {
   const payload = {
@@ -75,7 +74,7 @@ export default async function handler(req: Request, res: Response) {
     let allMessages = '';
 
     errorLogs.map((message: Auth0LogPayload) => {
-      const error_link = `https://manage.auth0.com/dashboard/us/${AUTH0_DOMAIN}/logs/${message.log_id}`;
+      const error_link = `https://manage.auth0.com/dashboard/eu/${AUTH0_DOMAIN}/logs/${message.log_id}`;
       allMessages += `Auth0 Log:\nError Type: ${errorTypes[message.data.type] ?? message.data.type}\nUser email: ${
         message.data.user_name
       }\nError Link: ${error_link}\n\n`;
