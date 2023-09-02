@@ -9,7 +9,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
 
 function External() {
-  const [state, setState] = useState({ isLoading: false, response: undefined, error: undefined });
+  const [state, setState] = useState<any>({ isLoading: false, response: undefined, error: undefined });
 
   const callApi = async () => {
     setState(previous => ({ ...previous, isLoading: true }));
