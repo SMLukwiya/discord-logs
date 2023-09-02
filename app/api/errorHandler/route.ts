@@ -36,6 +36,7 @@ async function sendToDiscord(message: string) {
 export async function POST(req: Request) {
   if (req.method === 'POST') {
     const requestBody = await req.json();
+    console.log('REQ===========', requestBody);
     const { log_id, data } = requestBody as Auth0LogPayload;
 
     const error_link = `https://manage.auth0.com/dashboard/us/${process.env.AUTH0_DOMAIN}/logs/${log_id}`;
