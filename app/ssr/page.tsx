@@ -5,7 +5,7 @@ import Highlight from '../../components/Highlight';
 
 export default withPageAuthRequired(
   async function SSRPage() {
-    const { user } = await getSession();
+    const { user } = await getSession() as any;
     return (
       <>
         <div className="mb-5" data-testid="ssr">
