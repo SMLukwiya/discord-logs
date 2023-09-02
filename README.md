@@ -8,7 +8,7 @@
 
 4. Select Custom Webhook as the Type
 
-5.  Configure Webhook Settings and Provide the URL endpoint of your custom webhook.
+5.  Configure Webhook Settings, filter events to errors and Provide the URL endpoint of your custom webhook.
 
 6.  Save the Configuration
 
