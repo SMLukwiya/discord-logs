@@ -34,3 +34,13 @@ Specify the format in which you want to send logs to Object or JSON.
 11. Save the Configuration:
     - Click the "Save" or "Create" button to save your log stream configuration.
 Enable the Log Stream:
+
+#### Environment Variables
+
+AUTH0_SECRET=
+AUTH0_BASE_URL=http://localhost:3000
+AUTH0_ISSUER_BASE_URL='https://dev-78834jhkfa893qd.us.auth0.com'
+AUTH0_DOMAIN='dev-78834jhkfa893qd'
+AUTH0_CLIENT_ID=
+AUTH0_CLIENT_SECRET=
+DISCORD_WEB_HOOK=
