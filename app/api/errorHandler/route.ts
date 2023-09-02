@@ -72,6 +72,7 @@ export async function POST(req: Request) {
   if (req.method === 'POST') {
     const requestBody = await req.json();
     const errorLogs = requestBody.logs;
+    console.log('RE-======================', errorLogs);
 
     let allMessages = '';
 
