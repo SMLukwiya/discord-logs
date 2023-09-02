@@ -51,8 +51,7 @@ const errorTypes = {
   fvr: 'Failed Verification Email Request'
 };
 
-const DISCORD_WEBHOOK_URL =
-  'https://discord.com/api/webhooks/1147222511201824898/PRLd3CpMNqDnJ8xzbq3No6Pbnl2epL5GPA1yQqp76S9WvOECtBA7vZH99EJ9PEqIRVBk';
+const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEB_HOOK || '';
 
 async function sendToDiscord(message: string) {
   const payload = {

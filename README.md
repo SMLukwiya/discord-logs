@@ -1,6 +1,5 @@
 ## Setup Steps 📣
 
-
 1. Navigate to Logs
 
 2. Choose Log Stream
@@ -9,6 +8,6 @@
 
 4. Select Custom Webhook as the Type
 
-5.  Configure Webhook Settings, Provide the URL endpoint of your custom webhook.
+5.  Configure Webhook Settings and Provide the URL endpoint of your custom webhook.
 
 6.  Save the Configuration
