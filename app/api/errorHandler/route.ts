@@ -22,15 +22,15 @@ const errorTypes = {
   fce: 'Failed Change Email',
   fco: 'Failed by CORS',
   fcp: 'Failed Change Password',
-  fcpr: '	Failed Change Password Request',
+  fcpr: 'Failed Change Password Request',
   fcu: 'Failed Change Username',
   fd: '	Failed Delegation',
   fdeac: 'Failed Device Activation',
   fdecc: 'User Canceled Device Confirmation',
   fdu: 'Failed User Deletion',
-  feacft: 'Failed Exchange	Failed to exchange authorization code for Access Token',
+  feacft: 'Failed to exchange authorization code for Access Token',
   feccft: 'Failed exchange of Access Token for a Client Credentials Grant',
-  fede: 'Failed Exchange	Failed to exchange Device Code for Access Token',
+  fede: 'Failed to exchange Device Code for Access Token',
   fens: 'Failed exchange for Native Social Login',
   feoobft: 'Failed exchange of Password and OOB Challenge for Access Token',
   feotpft: 'Failed exchange of Password and OTP Challenge for Access Token',
@@ -47,7 +47,7 @@ const errorTypes = {
   fsa: 'Failed Silent Auth',
   fu: 'Failed Login (Invalid Email/Username)',
   fui: 'Failed users import	Failed to import users',
-  fv: 'Failed Verification Email	Failed to send verification email',
+  fv: 'Failed to send verification email',
   fvr: 'Failed Verification Email Request'
 };
 
