@@ -39,7 +39,7 @@ Enable the Log Stream:
 
 AUTH0_SECRET=
 
-AUTH0_BASE_URL=http://localhost:3000
+AUTH0_BASE_URL=
 
 AUTH0_ISSUER_BASE_URL='https://dev-78834jhkfa893qd.us.auth0.com'
 
