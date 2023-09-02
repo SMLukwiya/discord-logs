@@ -72,9 +72,6 @@ export default async function handler(req: Request, res: Response) {
     let allMessages = '';
 
     errorLogs.map((message: Auth0LogPayload) => {
-      // to get the error link
-      // Navigate to an error in the dashboard. Copy the full url and use it as the const without the error id.
-      // example link: https://manage.auth0.com/dashboard/us/dev-dsdrfu543y459f/logs/90020230902134725725131000000000000001223372039797809571
       const error_link = `https://manage.auth0.com/#/logs/log-id/${message.log_id}`;
       allMessages += `Auth0 Log:\nError Type: ${errorTypes[message.data.type] ?? message.data.type}\nUser email: ${
         message.data.user_name
