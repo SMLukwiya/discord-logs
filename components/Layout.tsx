@@ -5,7 +5,7 @@ import Head from 'next/head';
 import NavBar from './NavBar';
 import Footer from './Footer';
 
-const Layout = ({ children }) => (
+const Layout = ({ children }: {children: React.ReactNode}) => (
   <>
     <Head>
       <link

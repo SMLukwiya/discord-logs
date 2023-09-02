@@ -3,7 +3,16 @@ import Link from 'next/link';
 
 import NavBarItem from './NavBarItem';
 
-const PageLink = ({ children, href, className, icon, tabIndex, testId }) => {
+export interface LinkPageParams {
+  children: React.ReactNode;
+  href: string;
+  className?: string;
+  icon?: React.ReactNode;
+  tabIndex?: number;
+  testId?: string
+}
+
+const PageLink = ({ children, href, className, icon, tabIndex, testId }: LinkPageParams) => {
   return (
     <Link legacyBehavior href={href}>
       <a>
