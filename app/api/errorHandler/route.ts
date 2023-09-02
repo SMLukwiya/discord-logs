@@ -36,15 +36,18 @@ async function sendToDiscord(message: string) {
 export async function POST(req: Request) {
   if (req.method === 'POST') {
     const requestBody = await req.json();
-    const { log_id, data } = requestBody.logs[0] as Auth0LogPayload;
+    const errorLogs = requestBody.logs;
 
-    const error_link = `https://manage.auth0.com/dashboard/us/${process.env.AUTH0_DOMAIN}/logs/${log_id}?page=1`;
+    let allMessages = '';
 
-    const message = `Auth0 Log:\nError Type: ${data.type}\nUser Email: ${data.user_name}\nError Link: ${error_link}`;
+    errorLogs.map((message: Auth0LogPayload) => {
+      const error_link = `https://manage.auth0.com/dashboard/us/${process.env.AUTH0_DOMAIN}/logs/${message.log_id}?page=1`;
+      allMessages += `Auth0 Log:\nError Type: ${message.data.type}\nUser email: ${message.data.user_name}\nError Link: ${error_link}\n`;
+    });
 
     // Forward the log details to the Discord channel
     try {
-      await sendToDiscord(message);
+      await sendToDiscord(allMessages);
     } catch (e) {
       return NextResponse.json({ error: e });
     }
