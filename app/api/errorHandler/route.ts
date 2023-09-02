@@ -2,16 +2,18 @@
 import { NextResponse } from 'next/server';
 
 type Auth0LogPayload = {
-  date: string;
-  type: string;
-  description: string;
-  details: {
-    error: {
-      message: string;
-    };
-  };
-  user_name: string;
   log_id: string;
+  data: {
+    date: string;
+    type: string;
+    description: string;
+    client_id: string;
+    client_name: string;
+    ip: string;
+    user_agent: string;
+    user_id: string;
+    log_id: string;
+  };
 };
 
 const DISCORD_WEBHOOK_URL =
@@ -34,11 +36,11 @@ async function sendToDiscord(message: string) {
 export async function POST(req: Request) {
   if (req.method === 'POST') {
     const requestBody = await req.json();
-    const { date, log_id, type, description } = requestBody as Auth0LogPayload;
+    const { log_id, data } = requestBody as Auth0LogPayload;
 
     const error_link = `https://manage.auth0.com/dashboard/us/${process.env.AUTH0_DOMAIN}/logs/${log_id}`;
 
-    const message = `Auth0 Log:\nDate: ${date}\nType: ${type}\nDescription: ${description}\nError Link: ${error_link}`;
+    const message = `Auth0 Log:\nDate: ${data.date}\nType: ${data.type}\nDescription: ${data.description}\nError Link: ${error_link}`;
 
     // Forward the log details to the Discord channel
     try {
