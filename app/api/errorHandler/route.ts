@@ -42,7 +42,7 @@ export async function POST(req: Request) {
 
     errorLogs.map((message: Auth0LogPayload) => {
       const error_link = `https://manage.auth0.com/dashboard/us/${process.env.AUTH0_DOMAIN}/logs/${message.log_id}?page=1`;
-      allMessages += `Auth0 Log:\nError Type: ${message.data.type}\nUser email: ${message.data.user_name}\nError Link: ${error_link}\n`;
+      allMessages += `Auth0 Log:\nError Type: ${message.data.type}\nUser email: ${message.data.user_name}\nError Link: ${error_link}\n\n`;
     });
 
     // Forward the log details to the Discord channel
@@ -53,6 +53,6 @@ export async function POST(req: Request) {
     }
     NextResponse.json({ message: 'Log forwarded to Discord' });
   } else {
-    return NextResponse.json({ error: 'Method not allowed' }, { status: 405 }); // Method Not Allowed
+    return NextResponse.json({ error: 'Method not allowed' }, { status: 405 });
   }
 }
