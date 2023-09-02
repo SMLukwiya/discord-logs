@@ -72,7 +72,6 @@ export async function POST(req: Request) {
   if (req.method === 'POST') {
     const requestBody = await req.json();
     const errorLogs = requestBody.logs;
-    console.log('RE-======================', errorLogs);
 
     let allMessages = '';
 
@@ -89,7 +88,7 @@ export async function POST(req: Request) {
     } catch (e) {
       return NextResponse.json({ error: e });
     }
-    NextResponse.json({ message: 'Log forwarded to Discord' });
+    return NextResponse.json({ message: 'Log forwarded to Discord' });
   } else {
     return NextResponse.json({ error: 'Method not allowed' }, { status: 405 });
   }
